@@ -1,5 +1,5 @@
+import PropTypes  from "prop-types"
 
-// import React, { Children } from 'react'
 function Profile({fullName, bio, profession,children,handleName}) {
    
     return (
@@ -16,7 +16,20 @@ function Profile({fullName, bio, profession,children,handleName}) {
              </div>   
     )
 }
-
+Profile.defaultProps={
+    fullName:"guest",
+    bio:" bio not found" ,
+    profession: " profession not found",
+    handleName:()=>alert("default function")
+  }
+  
+  Profile.propTypes={
+    fullName:PropTypes.string,
+    bio:PropTypes.string,
+    profession:PropTypes.string,
+    handleName:PropTypes.func
+  }
+  
 
 
 export default Profile
